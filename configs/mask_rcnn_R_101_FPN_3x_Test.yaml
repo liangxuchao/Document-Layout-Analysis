@@ -1,0 +1,18 @@
+_BASE_: "Base-RCNN-FPN.yaml"
+MODEL:
+  WEIGHTS: "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_101_FPN_3x/138205316/model_final_a3ec72.pkl"
+  MASK_ON: True
+  RESNETS:
+    DEPTH: 101
+  ROI_HEADS:
+    BATCH_SIZE_PER_IMAGE: 256
+DATASETS:
+  TRAIN: ("publaynet_train",)
+  TEST: ("publaynet_val",)
+SOLVER:
+  STEPS: (105000, 125000)
+  MAX_ITER: 37750
+  IMS_PER_BATCH: 2
+  BASE_LR: 0.002
+DATALOADER:
+  NUM_WORKERS: 1
