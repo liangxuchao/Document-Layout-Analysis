@@ -1,1 +1,1 @@
-from .preprocess import register_publaynet_dataset
+from .preprocess import register_dataset

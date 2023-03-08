@@ -1,0 +1,30 @@
+_BASE_: "Base-RCNN-FPN.yaml"
+MODEL:
+  WEIGHTS: "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_101_FPN_3x/138205316/model_final_a3ec72.pkl"
+  MASK_ON: True
+  RESNETS:
+    DEPTH: 101
+  ROI_HEADS:
+    BATCH_SIZE_PER_IMAGE: 512
+    NUM_CLASSES: 11
+    SCORE_THRESH_TEST: 0.7
+
+DATASETS:
+  TRAIN: ("doclaynet_train",)
+  TEST: ( "doclaynet_val",)
+  # TRAIN: ("doclaynet_train","doclaynet_train_1",  "doclaynet_train_2",  "doclaynet_train_3",  "doclaynet_train_4",  "doclaynet_train_5",  "doclaynet_train_6",  "doclaynet_train_7","doclaynet_train_8",  "doclaynet_train_9",  "doclaynet_train_10","doclaynet_train_11")
+  # TEST: ("doclaynet_val", "doclaynet_val_1",  "doclaynet_val_2",  "doclaynet_val_3",  "doclaynet_val_4",  "doclaynet_val_5",  "doclaynet_val_6",  "doclaynet_val_7",  "doclaynet_val_8",  "doclaynet_val_9",  "doclaynet_val_10",  "doclaynet_val_11")
+SOLVER:
+  # STEPS: (195000, 232000)
+  # MAX_ITER: 250000
+  STEPS: (495000, 498000)
+  MAX_ITER: 500000
+  IMS_PER_BATCH: 1
+  BASE_LR: 0.00025
+# TEST:
+#   AUG: 
+#     ENABLED: True
+DATALOADER:
+  NUM_WORKERS: 1
+
+  

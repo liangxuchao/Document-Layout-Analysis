@@ -1,0 +1,45 @@
+_BASE_: "Base-RCNN-FPN.yaml"
+MODEL:
+  WEIGHTS: "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_101_FPN_3x/138205316/model_final_a3ec72.pkl"
+  MASK_ON: True
+  RESNETS:
+    DEPTH: 101
+  ROI_HEADS:
+    BATCH_SIZE_PER_IMAGE: 512
+    NUM_CLASSES: 1
+    SCORE_THRESH_TEST: 0.7
+
+DATASETS:
+  # TRAIN: ("wrap_train","wrap_train_1","wrap_train_2","wrap_train_3","wrap_train_4","wrap_train_5","wrap_train_6",)
+  # TEST: ("wrap_val",)
+  TRAIN: ("wrap_train","wrap_train_1","wrap_train_2","wrap_train_3","wrap_train_4","wrap_train_5","wrap_train_6",)
+  TEST: ("wrap_val",)
+  # TRAIN: ("doclaynet_train","doclaynet_train_1",  "doclaynet_train_2",  "doclaynet_train_3",  "doclaynet_train_4",  "doclaynet_train_5",  "doclaynet_train_6",  "doclaynet_train_7","doclaynet_train_8",  "doclaynet_train_9",  "doclaynet_train_10","doclaynet_train_11")
+  # TEST: ("doclaynet_val", "doclaynet_val_1",  "doclaynet_val_2",  "doclaynet_val_3",  "doclaynet_val_4",  "doclaynet_val_5",  "doclaynet_val_6",  "doclaynet_val_7",  "doclaynet_val_8",  "doclaynet_val_9",  "doclaynet_val_10",  "doclaynet_val_11")
+
+# INPUT:
+#   CROP:
+#     ENABLED: False
+#     SIZE: [0.9, 0.9]
+#     TYPE: relative_range
+#   FORMAT: BGR
+#   MASK_FORMAT: polygon
+#   MAX_SIZE_TEST: 1333
+#   MAX_SIZE_TRAIN: 760
+#   MIN_SIZE_TEST: 800
+#   MIN_SIZE_TRAIN: (400, )
+#   MIN_SIZE_TRAIN_SAMPLING: choice
+
+SOLVER:
+  # STEPS: (195000, 232000)
+  # MAX_ITER: 250000
+  STEPS: (30000, 35000)
+  MAX_ITER: 40000
+  IMS_PER_BATCH: 2
+  BASE_LR: 0.00025
+# TEST:
+#   AUG: 
+#     ENABLED: True
+DATALOADER:
+  NUM_WORKERS: 1
+  

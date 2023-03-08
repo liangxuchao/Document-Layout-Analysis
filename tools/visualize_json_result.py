@@ -39,7 +39,11 @@ def create_instances(predictions, image_size):
 
 
 if __name__ == "__main__":
-    register_coco_instances("PubLayNet_val", {}, "E:/fyp/publaynet/val.json", "E:/fyp/publaynet/val/")
+    # register_coco_instances("PubLayNet_val", {}, "E:/fyp/publaynet/val.json", "E:/fyp/publaynet/val/")
+    register_coco_instances("dataset_val", {}, r"E:\fyp\doclaynet\COCO\val_5_1.json", "E:/fyp/doclaynet/PNG/")
+
+    #"C:\Users\Liang Xu Chao\Documents\ntu\project\output\inference\coco_instances_results.json"
+    #"C:\Users\Liang Xu Chao\Documents\ntu\project\tools\testimg\predict"
     parser = argparse.ArgumentParser(
         description="A script that visualizes the json predictions from COCO or LVIS dataset."
     )
@@ -57,9 +61,12 @@ if __name__ == "__main__":
     pred_by_image = defaultdict(list)
     for p in predictions:
         pred_by_image[p["image_id"]].append(p)
-    metadata = MetadataCatalog.get("PubLayNet_val")
+    # metadata = MetadataCatalog.get("PubLayNet_val")
 
-    dicts = list(DatasetCatalog.get("PubLayNet_val"))
+    # dicts = list(DatasetCatalog.get("PubLayNet_val"))
+    metadata = MetadataCatalog.get("dataset_val")
+
+    dicts = list(DatasetCatalog.get("dataset_val"))
 
     # dicts = list(DatasetCatalog.get(args.dataset))
     # metadata = MetadataCatalog.get(args.dataset)

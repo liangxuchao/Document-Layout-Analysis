@@ -1,0 +1,24 @@
+_BASE_: "Base-RCNN-FPN.yaml"
+MODEL:
+  MASK_ON: False
+  WEIGHTS: "detectron2://ImageNetPretrained/FAIR/X-101-32x8d.pkl"
+  PIXEL_STD: [57.375, 57.120, 58.395]
+  RESNETS:
+    STRIDE_IN_1X1: False  # this is a C2 model
+    NUM_GROUPS: 32
+    WIDTH_PER_GROUP: 8
+    DEPTH: 101
+  ROI_HEADS:
+    BATCH_SIZE_PER_IMAGE: 512
+DATASETS:
+  # TRAIN: ("publaynet_train","docbank_train",)
+  # TEST: ("publaynet_val","docbank_val")
+  TRAIN: ("publaynet_train",)
+  TEST: ("publaynet_val",)
+SOLVER:
+  STEPS: (6000, 8000)
+  MAX_ITER: 10000
+  IMS_PER_BATCH: 2
+  BASE_LR: 0.0009
+DATALOADER:
+  NUM_WORKERS: 1
