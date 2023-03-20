@@ -1,5 +1,5 @@
 # Document-Layout-Analysis
-Tools for extract figure, table, text,... from a pdf document
+
 ## Installation
 ```
 $   pip install -r requirements.txt
@@ -42,28 +42,28 @@ You can save the model anywhere as long as you adjust the path in the setting.js
 The project used the config file 'configs/mask_rcnn_R_101_FPN_3x_11category_1.yaml'
 
 Take note the name of the train and test dataset
-
+```
 DATASETS:
   TRAIN: ("doclaynet_train",)
   TEST: ("doclaynet_val",)
 
 MAX_ITER: 1460000
 IMS_PER_BATCH: 1
-
+```
 Go to 'tools/preprocess.py'
-
+```
 def register_dataset():
     register_coco_instances("doclaynet_val", {}, "/val_doclaynet.json", "/doclaynet/PNG/")
     register_coco_instances("doclaynet_train", {}, "/train_doclaynet.json", "/doclaynet/PNG/")
-
+```
 Change the path after downloaded the dataset
 
 The MAX_ITER above will be the total literations in training and IMS_PER_BATCH is the number of images train in 1 literation. Please adjust base on your needs.
 
 Below command to start training
-
+```
 python .\train.py --num-gpus 1 --config-file 'configs/mask_rcnn_R_101_FPN_3x_11category_1.yaml'
-
+```
 To activate image augmentation, please use the trainWithImgAug() function in train.py
 
 ### Demo Application
@@ -71,7 +71,7 @@ To activate image augmentation, please use the trainWithImgAug() function in tra
 The project using Django to build a simple website for demo purpose. 
 
 Set the paths in the /web/predictionDir/setting.json
-
+```
 "PredictDocumentModel":/absolute/path/to/web/predictionDir/model/model_final_document_80000.pth,
 "PredictLayoutModel":"/absolute/path/to/web/predictionDir/model/model_final_doclaynet_1460000.pth",
 "TestImgDir":"/absolute/path/to/web/predictionDir/testImg/phototakinginput/",     -- path to test image file 
@@ -85,7 +85,9 @@ Set the paths in the /web/predictionDir/setting.json
 "COCOJsonLayout":"/absolute/path/to/web/predictionDir/model/val_doclaynet.json",
 "PredDocumentThreshold":0.9,
 "PredLayoutThreshold":0.5
+```
 
+```
 cd /web/
 python manage.py runserver
-
+```
