@@ -9,14 +9,9 @@ import cv2
 import json as JS
 import os 
 import random as rd
-# coco = "E:/fyp/ibem/val_7category.json"
-#coco = "E:/fyp/publaynet/val_500_1.json"
+
 coco = "E:/fyp/doclaynet/COCO/val_doclaynet.json"
-# coco = "E:/fyp/warpdoc/withcoco/train_50_1c.json"
 
-# test_data_dir = "E:/fyp/ibem/val"
-
-# test_data_dir = "E:/fyp/publaynet/train"
 test_data_dir = "E:/fyp/doclaynet/PNG/"
 # Create config
 cfg = get_cfg()   
@@ -24,13 +19,8 @@ cfg.merge_from_file('../configs/mask_rcnn_R_101_FPN_3x_11category_1.yaml')
 cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.5  # set threshold for this model
 # cfg.MODEL.WEIGHTS = "../output/model_final.pth"  
 cfg.MODEL.WEIGHTS = "E:/fyp/model/model_final_doclaynet_1460000.pth"
+cfg.MODEL.DEVICE  = 'cpu'
 
-
-# '../configs/mask_rcnn_R_101_FPN_3x_1category.yaml'
-# "../output/model_final.pth"  
-# cfg.TEST.AUG.ENABLED = True
-# with open(coco, "r") as json_file:
-#     data = JS.load(json_file)
 
 instancename = 'val'
 register_coco_instances(instancename, {}, coco, test_data_dir)

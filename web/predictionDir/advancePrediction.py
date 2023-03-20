@@ -22,11 +22,13 @@ class documentPreditor:
         self.cfg.merge_from_file(dconfig)
         self.cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = dclevel # set threshold for this model
         self.cfg.MODEL.WEIGHTS = dmodel 
+        self.cfg.MODEL.DEVICE  = 'cpu'
 
         self.cfg2 = get_cfg()
         self.cfg2.merge_from_file(lconfig)
         self.cfg2.MODEL.ROI_HEADS.SCORE_THRESH_TEST = lclevel # set threshold for this model
         self.cfg2.MODEL.WEIGHTS = lmodel
+        self.cfg2.MODEL.DEVICE  = 'cpu'
 
         self.dpredictor = DefaultPredictor(self.cfg)
 

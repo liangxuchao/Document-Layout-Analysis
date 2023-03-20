@@ -264,7 +264,7 @@ def main(args):
     return trainer.train()
 
 
-def main2(args):
+def trainWithImgAug(args):
     cfg = setup(args)
 
     if args.eval_only:
@@ -308,7 +308,7 @@ def Start(args):
     )   
 def StartImgAug(args):
     launch(
-        main2,
+        trainWithImgAug,
         args.num_gpus,
         num_machines=args.num_machines,
         machine_rank=args.machine_rank,
@@ -352,7 +352,7 @@ if __name__ == "__main__":
     args = default_argument_parser().parse_args()
     print("Command Line Args:", args)
     launch(
-        main2,
+        main,
         args.num_gpus,
         num_machines=args.num_machines,
         machine_rank=args.machine_rank,
