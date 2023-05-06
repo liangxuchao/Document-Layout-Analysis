@@ -27,13 +27,14 @@ $   python -m pip install -e detectron2
 
 ### Model
 
-https://drive.google.com/file/d/1M9L7yJJpDF5APDz4aJ_1w2TNdZJ4zcLB/view?usp=sharing, 
-https://drive.google.com/file/d/1fLg1JKZLfDrunK3CzHwqAHlxHS_rqlek/view?usp=sharing
-
-Download above two model 
+Model is under /output folder
 
 model_final_document_80000.pth
 model_final_doclaynet_1460000.pth
+
+Or you can download from below link
+https://drive.google.com/file/d/1M9L7yJJpDF5APDz4aJ_1w2TNdZJ4zcLB/view?usp=sharing, 
+https://drive.google.com/file/d/1fLg1JKZLfDrunK3CzHwqAHlxHS_rqlek/view?usp=sharing
 
 You can save the model anywhere as long as you adjust the path in the setting.json file
 
