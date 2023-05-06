@@ -39,7 +39,6 @@ def _get_publaynet_instances_meta():
     return ret
 def register_dataset():
 
-    #register_coco_instances("publaynet_val", {}, "E:/fyp/publaynet/val_3000_1.json", "E:/fyp/publaynet/train/")
     register_coco_instances("doclaynet_val", {}, "E:/fyp/doclaynet/COCO/val_doclaynet.json", "E:/fyp/doclaynet/PNG/")
     register_coco_instances("doclaynet_train", {}, "E:/fyp/doclaynet/COCO/train_doclaynet.json", "E:/fyp/doclaynet/PNG/")
 
