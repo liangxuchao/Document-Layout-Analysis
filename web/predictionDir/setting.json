@@ -1,6 +1,6 @@
 {
-    "PredictDocumentModel":"E:/fyp/model/model_final_document_80000.pth",
-    "PredictLayoutModel":"E:/fyp/model/model_final_doclaynet_1460000.pth",
+    "PredictDocumentModel":"C:/Users/Liang Xu Chao/Documents/ntu/project/output/model_final_document_80000.pth",
+    "PredictLayoutModel":"C:/Users/Liang Xu Chao/Documents/ntu/project/output/model_final_doclaynet_1460000.pth",
     "TestImgDir":"C:/Users/Liang Xu Chao/Documents/ntu/project/web/predictionDir/testImg/phototakinginput/",
     "TestDigitalImgDir":"C:/Users/Liang Xu Chao/Documents/ntu/project/web/predictionDir/testImg/digitalinput/",
     "OutPutDocumentDir":"C:/Users/Liang Xu Chao/Documents/ntu/project/web/predictionDir/testImg/document/",
@@ -8,8 +8,8 @@
     "OutPutOriginDir":"C:/Users/Liang Xu Chao/Documents/ntu/project/web/predictionDir/testImg/predictOrigin/",
     "ConfigFilePreidctOnDocument":"C:/Users/Liang Xu Chao/Documents/ntu/project/configs/mask_rcnn_R_101_FPN_3x_1category.yaml",
     "ConfigFilePreidctOnLayout":"C:/Users/Liang Xu Chao/Documents/ntu/project/configs/mask_rcnn_R_101_FPN_3x_11category_1.yaml",
-    "COCOJsonDocument":"E:/fyp/warpdoc/withcoco/train_50_1c.json",
-    "COCOJsonLayout":"E:/fyp/doclaynet/coco/val_doclaynet.json",
+    "COCOJsonDocument":"C:/Users/Liang Xu Chao/Documents/ntu/project/web/model/mask_rcnn_R_101_FPN_3x_11category_1.yaml/train_50_1c.json",
+    "COCOJsonLayout":"C:/Users/Liang Xu Chao/Documents/ntu/project/web/model/val_doclaynet.json",
     "PredDocumentThreshold":0.9,
     "PredLayoutThreshold":0.5
 }

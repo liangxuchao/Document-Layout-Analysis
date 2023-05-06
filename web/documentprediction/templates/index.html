@@ -9,7 +9,7 @@
         </div>
 
 
-        <h6>Current Setting</h6>
+        {% comment %} <h6>Current Setting</h6>
         <div class="table-responsive">
           <table class="table table-striped table-sm">
             <thead>
@@ -27,7 +27,7 @@
              
             </tbody>
           </table>
-        </div>
+        </div> {% endcomment %}
         <h6>Upload Image File For Prediction</h6>
         <form  id="uploadimgform"  enctype="multipart/form-data">
             {% csrf_token %}
